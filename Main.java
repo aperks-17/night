@@ -52,13 +52,24 @@ public class Main extends Application {
 				root.getChildren().add(stars);
 			}
 			
-			for(int i= 0; i<=50; i++ ) {
+								
+			int max = 500;
+			int min = 300;
+			
+			for(int i= 0; i<50; i++ ) {
+				
+			Random rdm = new Random();
+			int rdmNum = rdm.nextInt(max - min + 1) + min;
+			
+			double buildingY = rdmNum;// - buildingY;	
+			double buildingX = i*10;
 			
 			Rectangle r = new Rectangle();
-			//r.setX(0);
-			//r.setY(400);
+			r.setHeight(rdmNum);
 			r.setWidth(10);
-			r.setHeight(200);
+			r.setX(buildingX);
+			r.setY(buildingY);
+			
 			r.setFill(Color.SANDYBROWN);
 			root.getChildren().add(r);
 			}
