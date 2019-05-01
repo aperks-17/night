@@ -31,21 +31,41 @@ public class Main extends Application {
 			root.getChildren().add(moon);
 
 			for (int i = 0; i <= 1000; i++) {
-				
+	
 				double upper = 500;
 				double lower = 0;
 				Random ran= new Random();
 				ran.nextDouble();
-				double r= lower + (upper - lower)* ran.nextDouble();
-				System.out.println(r);
-				Circle stars = new Circle(3);
-				stars.setCenterX((int)r);
-				stars.setCenterY((int)r);
-//				stars.setRadius((1 / 2) * r);
+				double rx= lower + (upper - lower)* ran.nextDouble();
+				Random rand= new Random();
+				ran.nextDouble();
+				double ry= lower + (upper - lower)* rand.nextDouble();
+				double high = 5;
+				double low = 0;
+				Random m= new Random();
+				m.nextDouble();
+				double rm= low + (high - low)* m.nextDouble();
+				Circle stars = new Circle(rm);
+				stars.setCenterX((int)rx);
+				stars.setCenterY((int)ry);
 				stars.setFill(Color.GHOSTWHITE);
 				root.getChildren().add(stars);
 			}
+			
+			for(int i= 0; i<=50; i++ ) {
+			
+			Rectangle r = new Rectangle();
+			//r.setX(0);
+			//r.setY(400);
+			r.setWidth(10);
+			r.setHeight(200);
+			r.setFill(Color.SANDYBROWN);
+			root.getChildren().add(r);
+			}
 
+			
+			
+			
 			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
